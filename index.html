@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coach Khaled | Nutrition & Perte de poids</title>
+  <meta name="description" content="Coach Khaled - Coaching en nutrition, perte de poids, programmes personnalisés et suivi." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #f6c445;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f6c445;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 50px 0;
+      background:
+        linear-gradient(135deg, rgba(246,196,69,0.08), transparent 40%),
+        linear-gradient(0deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(246,196,69,0.12);
+      color: #f6c445;
+      border: 1px solid rgba(246,196,69,0.35);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #f6c445;
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      max-width: 650px;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #f6c445;
+      color: #111;
+      box-shadow: 0 10px 30px rgba(246,196,69,0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px rgba(246,196,69,0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .btn-secondary:hover {
+      border-color: #f6c445;
+      color: #f6c445;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .stat {
+      background: #151515;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 14px 18px;
+      min-width: 140px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.2rem;
+      color: #f6c445;
+      margin-bottom: 3px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-card {
+      width: 100%;
+      max-width: 390px;
+      background: linear-gradient(180deg, #191919, #101010);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(246,196,69,0.18);
+      top: -70px;
+      right: -70px;
+      filter: blur(20px);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 3px solid rgba(246,196,69,0.35);
+      background: #222;
+    }
+
+    .mini-card {
+      margin-top: 14px;
+      background: #121212;
+      border-radius: 16px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mini-card h3 {
+      color: #f6c445;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .mini-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* SECTION GENERIC */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2.2rem;
+    }
+
+    .section-title span {
+      color: #f6c445;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #bdbdbd;
+      max-width: 760px;
+      margin: 0 auto 40px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .card {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+
+    .card h3 {
+      color: #f6c445;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+
+    .card p, .card li {
+      color: #d8d8d8;
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .service-card {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 22px;
+      padding: 28px 22px;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(246,196,69,0.4);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    .service-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(246,196,69,0.22);
+      margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+      color: #f6c445;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #d0d0d0;
+      margin-bottom: 14px;
+    }
+
+    .service-card ul {
+      padding-left: 18px;
+      color: #cfcfcf;
+    }
+
+    .service-card ul li {
+      margin-bottom: 8px;
+    }
+
+    /* RESULTS */
+    .results {
+      background: linear-gradient(180deg, rgba(246,196,69,0.05), transparent);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: #141414;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 24px;
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: "“";
+      position: absolute;
+      top: 10px;
+      left: 16px;
+      font-size: 3rem;
+      color: rgba(246,196,69,0.18);
+      font-family: Georgia, serif;
+    }
+
+    .testimonial p {
+      color: #ddd;
+      margin-bottom: 16px;
+      margin-top: 10px;
+    }
+
+    .testimonial strong {
+      color: #f6c445;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .testimonial span {
+      color: #bdbdbd;
+      font-size: 0.92rem;
+    }
+
+    /* BOOK */
+    .book-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .book-cover {
+      background: #141414;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 380px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-cover::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: rgba(246,196,69,0.12);
+      filter: blur(30px);
+      top: -60px;
+      left: -60px;
+    }
+
+    .book-box {
+      width: 240px;
+      height: 320px;
+      background: linear-gradient(180deg, #f6c445, #d8a61f);
+      color: #111;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-weight: 800;
+      position: relative;
+      z-index: 2;
+    }
+
+    .book-box .small {
+      font-size: 0.9rem;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .book-box h3 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin: 10px 0;
+    }
+
+    .book-content {
+      background: #141414;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 30px;
+    }
+
+    .book-content h3 {
+      color: #f6c445;
+      margin-bottom: 14px;
+      font-size: 1.5rem;
+    }
+
+    .book-content p {
+      color: #d7d7d7;
+      margin-bottom: 14px;
+    }
+
+    .book-content ul {
+      padding-left: 20px;
+      color: #d0d0d0;
+      margin-bottom: 20px;
+    }
+
+    .book-content ul li {
+      margin-bottom: 10px;
+    }
+
+    /* BOOKING */
+    .booking {
+      background: linear-gradient(180deg, transparent, rgba(246,196,69,0.04));
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .booking-info {
+      background: #141414;
+      border-radius: 22px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .booking-info h3 {
+      color: #f6c445;
+      margin-bottom: 14px;
+    }
+
+    .booking-info p {
+      color: #d6d6d6;
+      margin-bottom: 14px;
+    }
+
+    .booking-info ul {
+      padding-left: 20px;
+      color: #d0d0d0;
+    }
+
+    .booking-info ul li {
+      margin-bottom: 10px;
+    }
+
+    form {
+      background: #141414;
+      border-radius: 22px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+      color: #e9e9e9;
+      font-weight: 600;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0f0f0f;
+      color: #fff;
+      outline: none;
+      transition: 0.25s;
+      font-size: 0.98rem;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #f6c445;
+      box-shadow: 0 0 0 3px rgba(246,196,69,0.12);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #bdbdbd;
+      margin-top: 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 0 45px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 20px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-left strong {
+      color: #f6c445;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .footer-left p {
+      color: #bdbdbd;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #111;
+      background: #f6c445;
+      border-color: #f6c445;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-grid,
+      .about-grid,
+      .book-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 50px 0 70px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 1.95rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .profile-img {
+        height: 360px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="logo">Coach Khaled</div>
+      <nav class="nav-links">
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#results">Avis</a>
+        <a href="#book">Livre</a>
+        <a href="#booking">Réserver</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Coach Nutrition • Perte de poids • Suivi</div>
+        <h1>Perds du poids intelligemment avec <span>Coach Khaled</span></h1>
+        <p>
+          J’aide les personnes qui veulent perdre du poids, retrouver une alimentation plus simple
+          et atteindre un poids plus sain sans privation extrême. Programmes personnalisés,
+          accompagnement et suivi adaptés à votre objectif.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#booking" class="btn btn-primary">Réserver une consultation</a>
+          <a href="#services" class="btn btn-secondary">Voir mes services</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>+4000</strong>
+            personnes accompagnées
+          </div>
+          <div class="stat">
+            <strong>-4 kg</strong>
+            programme signature en 1 mois
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            suivi personnalisé
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-image-card">
+          <!-- بدل profile.jpg باسم صورتك -->
+          <img src="profile.jpg" alt="Coach Khaled" class="profile-img">
+          <div class="mini-card">
+            <h3>Coach Khaled Nutrition</h3>
+            <p>
+              Coaching nutritionnel, perte de poids, programmes personnalisés
+              et accompagnement pour reprendre le contrôle de votre alimentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Pourquoi choisir <span>Coach Khaled</span> ?</h2>
+      <p class="section-subtitle">
+        Un accompagnement simple, humain et structuré pour vous aider à perdre du poids,
+        comprendre votre alimentation et rester constant sur le long terme.
+      </p>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>Ma mission</h3>
+          <p>
+            Vous aider à sortir de la confusion, des régimes extrêmes et des erreurs alimentaires
+            qui bloquent votre progression. L’objectif est de construire une méthode claire,
+            adaptée à votre quotidien, à vos habitudes et à votre objectif.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ce que vous obtenez</h3>
+          <ul>
+            <li>Un plan alimentaire plus clair et plus facile à suivre.</li>
+            <li>Une stratégie de perte de poids adaptée à votre profil.</li>
+            <li>Des conseils concrets pour gérer la faim, les envies et les écarts.</li>
+            <li>Un suivi motivant pour rester constant et éviter de rechuter.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Mes <span>services</span></h2>
+      <p class="section-subtitle">
+        Choisissez la formule qui correspond à votre besoin actuel : bilan, programme ou suivi.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h3>Bilan nutrition</h3>
+          <p>Analyse de vos habitudes alimentaires et de votre situation actuelle.</p>
+          <ul>
+            <li>Étude de votre profil</li>
+            <li>Repérage des erreurs qui bloquent votre perte de poids</li>
+            <li>Conseils personnalisés</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h3>Programme perte de poids</h3>
+          <p>Un programme alimentaire simple et adapté à votre objectif.</p>
+          <ul>
+            <li>Organisation des repas</li>
+            <li>Structure claire pour perdre du poids</li>
+            <li>Conseils pratiques au quotidien</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h3>Suivi coaching</h3>
+          <p>Accompagnement et suivi pour garder la motivation et ajuster votre plan.</p>
+          <ul>
+            <li>Suivi régulier</li>
+            <li>Ajustements selon votre évolution</li>
+            <li>Soutien et cadre de progression</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="results" class="results">
+    <div class="container">
+      <h2 class="section-title">Ils ont aimé le <span>coaching</span></h2>
+      <p class="section-subtitle">
+        أمثلة على آراء العملاء. بدّل الأسماء والكلام بالآراء الحقيقية تاع الناس لي خدمو معاك.
+      </p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>
+            Grâce au suivi de Coach Khaled, j’ai enfin compris pourquoi je n’arrivais pas à perdre du poids.
+            Le programme était simple, clair et surtout adapté à ma vie quotidienne.
+          </p>
+          <strong>Amine B.</strong>
+          <span>-7 kg en 2 mois</span>
+        </div>
+
+        <div class="testimonial">
+          <p>
+            J’avais tout essayé avant, mais ici j’ai trouvé une méthode réaliste.
+            Pas de privation extrême, juste un plan intelligent et un vrai accompagnement.
+          </p>
+          <strong>Sara M.</strong>
+          <span>Reprise en main de son alimentation</span>
+        </div>
+
+        <div class="testimonial">
+          <p>
+            Ce que j’ai le plus aimé, c’est la clarté des conseils.
+            J’ai arrêté de faire n’importe quoi avec les régimes et j’ai enfin des repères.
+          </p>
+          <strong>Yacine K.</strong>
+          <span>Perte de poids progressive et durable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book">
+    <div class="container">
+      <h2 class="section-title">Mon <span>livre</span></h2>
+      <p class="section-subtitle">
+        Un guide pratique pour démarrer votre perte de poids avec une méthode claire.
+      </p>
+
+      <div class="book-grid">
+        <div class="book-cover">
+          <div class="book-box">
+            <div class="small">Guide pratique</div>
+            <h3>Perdre 4 kg en 1 mois</h3>
+            <div class="small">Coach Khaled Nutrition</div>
+          </div>
+        </div>
+
+        <div class="book-content">
+          <h3>Perdre 4 kg en 1 mois</h3>
+          <p>
+            Un ebook conçu pour les personnes qui veulent démarrer sérieusement leur perte de poids
+            avec une méthode simple, structurée et applicable dans la vraie vie.
+          </p>
+          <ul>
+            <li>Comprendre pourquoi le poids bloque.</li>
+            <li>Organiser ses repas sans tomber dans les extrêmes.</li>
+            <li>Éviter les erreurs qui sabotent la progression.</li>
+            <li>Construire une routine alimentaire plus stable.</li>
+          </ul>
+
+          <a href="#booking" class="btn btn-primary">Je veux commencer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="booking">
+    <div class="container">
+      <h2 class="section-title">Réserver une <span>consultation</span></h2>
+      <p class="section-subtitle">
+        Remplissez ce formulaire pour demander un accompagnement. Vous serez recontacté sur WhatsApp.
+      </p>
+
+      <div class="booking-grid">
+        <div class="booking-info">
+          <h3>Avant de réserver</h3>
+          <p>
+            Remplissez vos informations avec précision pour que je puisse mieux comprendre votre situation
+            et vous orienter vers la formule la plus adaptée.
+          </p>
+
+          <ul>
+            <li>Nom complet</li>
+            <li>Âge</li>
+            <li>Poids actuel</li>
+            <li>Taille</li>
+            <li>Objectif (perte de poids, stabilisation, etc.)</li>
+            <li>Numéro WhatsApp pour être recontacté</li>
+          </ul>
+
+          <p class="note">
+            Astuce : بعد ما تربط الفورم بخدمة استقبال، يوصلك كل طلب جديد مرتب وجاهز.
+          </p>
+        </div>
+
+        <!--
+          إذا تستعمل Formspree:
+          بدّل ACTION بهذا:
+          https://formspree.io/f/XXXXXXXX
+
+          وإذا تستعمل Google Form:
+          ماشي بنفس الطريقة، وأنا نشرحهالك تحت.
+        -->
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="Nom complet" placeholder="Entrez votre nom" required>
+            </div>
+
+            <div class="form-group">
+              <label for="age">Âge</label>
+              <input type="number" id="age" name="Âge" placeholder="Ex: 27" required>
+            </div>
+
+            <div class="form-group">
+              <label for="weight">Poids (kg)</label>
+              <input type="number" id="weight" name="Poids" placeholder="Ex: 92" required>
+            </div>
+
+            <div class="form-group">
+              <label for="height">Taille (cm)</label>
+              <input type="number" id="height" name="Taille" placeholder="Ex: 178" required>
+            </div>
+
+            <div class="form-group full">
+              <label for="goal">Objectif</label>
+              <select id="goal" name="Objectif" required>
+                <option value="">Choisir un objectif</option>
+                <option value="Perte de poids">Perte de poids</option>
+                <option value="Stabilisation du poids">Stabilisation du poids</option>
+                <option value="Prise de masse">Prise de masse</option>
+                <option value="Rééquilibrage alimentaire">Rééquilibrage alimentaire</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="whatsapp">Numéro WhatsApp</label>
+              <input type="tel" id="whatsapp" name="WhatsApp" placeholder="Ex: +213xxxxxxxxx" required>
+            </div>
+
+            <div class="form-group full">
+              <label for="message">Votre situation / message</label>
+              <textarea id="message" name="Message" placeholder="Expliquez votre situation, vos difficultés ou votre objectif..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">Envoyer ma demande</button>
+          <p class="note">
+            Vous serez recontacté sur WhatsApp après étude de votre demande.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-left">
+        <strong>Coach Khaled Nutrition</strong>
+        <p>Coaching en nutrition • perte de poids • programmes personnalisés</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://instagram.com/ton_compte" target="_blank">Instagram</a>
+        <a href="https://tiktok.com/@ton_compte" target="_blank">TikTok</a>
+        <a href="https://wa.me/213XXXXXXXXX" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
